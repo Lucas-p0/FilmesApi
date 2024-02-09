@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace FilmesAPI.Models;
 
 public class Filme
@@ -14,5 +9,4 @@ public class Filme
     public int Duracao { get; set; }
     public int Ano { get; set; }
     public double NotaIMDB { get; set; }
-
 }

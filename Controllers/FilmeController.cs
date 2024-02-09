@@ -19,6 +19,6 @@ public class FilmeController : ControllerBase
     public void AdicionarFilme([FromBody] Filme filme)
     {
         filmes.Add(filme);
-        Console.WriteLine("Codigo do filme: {0}, Titulo do filmes: {1}, Genero do filme: {2}, Duração do filme: {3}", filme.Id, filme.Titulo, filme.Genero, filme.Duracao);
+        Console.WriteLine("Codigo do filme: {0}, Titulo do filmes: {1}, Genero do filme: {2}, Duração do filme: {3}, Nota IMDB: {4}", filme.Id, filme.Titulo, filme.Genero, filme.Duracao, filme.NotaIMDB);
     }
 }
