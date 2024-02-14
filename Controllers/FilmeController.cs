@@ -14,11 +14,23 @@ namespace FilmesAPI.Controllers;
 public class FilmeController : ControllerBase
 {
     private static List<Filme> filmes = new List<Filme>();
+    private static int Id = 0;
 
     [HttpPost]
     public void AdicionarFilme([FromBody] Filme filme)
     {
+        filme.Id = Id++;
         filmes.Add(filme);
         Console.WriteLine("Codigo do filme: {0}, Titulo do filmes: {1}, Genero do filme: {2}, Duração do filme: {3}, Nota IMDB: {4}", filme.Id, filme.Titulo, filme.Genero, filme.Duracao, filme.NotaIMDB);
+    }
+
+    [HttpGet]
+    public IEnumerable<Filme> RecuperaFilmes()
+    {
+        return filmes;
+    }
+    public void RecuperaFilmesPorId(int id)
+    {
+        filmes.FirstOrDefault(filme => filme.Id == id);
     }
 }
