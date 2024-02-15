@@ -29,8 +29,9 @@ public class FilmeController : ControllerBase
     {
         return filmes;
     }
-    public void RecuperaFilmesPorId(int id)
+    [HttpGet("{id}")]
+    public Filme? RecuperaFilmesPorId(int id)
     {
-        filmes.FirstOrDefault(filme => filme.Id == id);
+        return filmes.FirstOrDefault(filme => filme.Id == id);
     }
 }
