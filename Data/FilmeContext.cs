@@ -2,11 +2,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FilmesAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FilmesAPI.Data
 {
-    public class FilmeContext
+    public class FilmeContext : DbContext
     {
-        
+        public FilmeContext(DbContextOptions<FilmeContext> opts)
+            : base(opts)
+        {
+
+        }
+        public DbSet<Filme> Filmes { get; set; }
+
     }
 }
