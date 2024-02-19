@@ -17,21 +17,26 @@ public class FilmeController : ControllerBase
     private static int Id = 0;
 
     [HttpPost]
-    public void AdicionarFilme([FromBody] Filme filme)
+    public CreatedAtActionResult AdicionarFilme([FromBody] Filme filme)
     {
         filme.Id = Id++;
         filmes.Add(filme);
         Console.WriteLine("Codigo do filme: {0}, Titulo do filmes: {1}, Genero do filme: {2}, Duração do filme: {3}, Nota IMDB: {4}", filme.Id, filme.Titulo, filme.Genero, filme.Duracao, filme.NotaIMDB);
+        return CreatedAtAction(nameof(RecuperaFilmesPorId),
+            new { id = filme.Id },
+            filme);
     }
 
     [HttpGet]
-    public IEnumerable<Filme> RecuperaFilmes()
+    public IEnumerable<Filme> RecuperaFilmes([FromQuery] int skip = 0, [FromQuery] int take = 30)
     {
-        return filmes;
+        return filmes.Skip(skip).Take(take);
     }
     [HttpGet("{id}")]
-    public Filme? RecuperaFilmesPorId(int id)
+    public IActionResult RecuperaFilmesPorId(int id)
     {
-        return filmes.FirstOrDefault(filme => filme.Id == id);
+        var filme = filmes.FirstOrDefault(filme => filme.Id == id);
+        if (filme == null) return NotFound();
+        return Ok(filme);
     }
 }
