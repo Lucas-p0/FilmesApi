@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projetos\\AutoPlay\\FilmesAPI\\FilmesAPI.csproj": {}
+    "C:\\Projetos\\AutoPlay\\FilmesAPI\\FilmesAPI.csproj": {}
   },
   "projects": {
-    "c:\\Projetos\\AutoPlay\\FilmesAPI\\FilmesAPI.csproj": {
+    "C:\\Projetos\\AutoPlay\\FilmesAPI\\FilmesAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projetos\\AutoPlay\\FilmesAPI\\FilmesAPI.csproj",
+        "projectUniqueName": "C:\\Projetos\\AutoPlay\\FilmesAPI\\FilmesAPI.csproj",
         "projectName": "FilmesAPI",
-        "projectPath": "c:\\Projetos\\AutoPlay\\FilmesAPI\\FilmesAPI.csproj",
+        "projectPath": "C:\\Projetos\\AutoPlay\\FilmesAPI\\FilmesAPI.csproj",
         "packagesPath": "C:\\Users\\Lucas.pinheiro\\.nuget\\packages\\",
-        "outputPath": "c:\\Projetos\\AutoPlay\\FilmesAPI\\obj\\",
+        "outputPath": "C:\\Projetos\\AutoPlay\\FilmesAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
