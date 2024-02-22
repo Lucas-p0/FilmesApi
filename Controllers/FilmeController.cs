@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
 using FilmesAPI.Data;
 using FilmesAPI.Data.Dtos;
 using FilmesAPI.Models;
 using Microsoft.AspNetCore.Mvc;
-using static System.Net.WebRequestMethods;
 
 namespace FilmesAPI.Controllers;
 
@@ -18,6 +13,7 @@ public class FilmeController : ControllerBase
     // private static List<Filme> filmes = new List<Filme>();
     // private static int Id = 0;
     private FilmeContext _context;
+    private IMapper _mapper;
     public FilmeController(FilmeContext context)
     {
         _context = context;
@@ -28,6 +24,7 @@ public class FilmeController : ControllerBase
     {
         // filme.Id = Id++;
         // filmes.Add(filme);
+        Filme filme = _mapper.Map<Filme>(filmeDTO);
         _context.Filmes.Add(filme);
         _context.SaveChanges();
         //Validação em
