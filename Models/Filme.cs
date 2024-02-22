@@ -4,6 +4,7 @@ namespace FilmesAPI.Models;
 
 public class Filme
 {
+    //Classe para Criar migration, no banco de dados
     public int Id { get; set; }
 
     [Required(ErrorMessage = "O Titulo do filme é obrigatório")]
