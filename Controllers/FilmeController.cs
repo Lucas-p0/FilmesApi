@@ -14,9 +14,12 @@ public class FilmeController : ControllerBase
     // private static int Id = 0;
     private FilmeContext _context;
     private IMapper _mapper;
-    public FilmeController(FilmeContext context)
+
+    public FilmeController(FilmeContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
+
     }
 
     [HttpPost]
@@ -45,4 +48,15 @@ public class FilmeController : ControllerBase
         if (filme == null) return NotFound();
         return Ok(filme);
     }
+
+    [HttpPut("{id}")]
+    public IActionResult AtualizaFilme(int id, [FromBody] UpdateFilmeDto filmeDTO)
+    {
+        var Filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+        if (Filme == null) return NotFound();
+        _mapper.Map(filmeDTO, Filme);
+        _context.SaveChanges();
+        return NoContent();
+    }
+
 }
