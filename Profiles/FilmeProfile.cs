@@ -9,7 +9,7 @@ public class FilmeProfiles : Profile
     public FilmeProfiles()
     {
         CreateMap<CreateFilmeDTO, Filme>();
-        CreateMap<UpdateFilmeDto, Filme>();
-        CreateMap<Filme, UpdateFilmeDto>();
+        CreateMap<UpdateFilmeDTO, Filme>();
+        CreateMap<Filme, UpdateFilmeDTO>();
     }
 }

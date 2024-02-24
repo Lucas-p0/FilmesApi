@@ -51,7 +51,7 @@ public class FilmeController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public IActionResult AtualizaFilme(int id, [FromBody] UpdateFilmeDto filmeDTO)
+    public IActionResult AtualizaFilme(int id, [FromBody] UpdateFilmeDTO filmeDTO)
     {
         var Filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
         if (Filme == null) return NotFound();
@@ -61,11 +61,11 @@ public class FilmeController : ControllerBase
     }
 
     [HttpPatch("{id}")]
-    public IActionResult AtualizaFilmeParcial(int id, JsonPatchDocument<UpdateFilmeDto> patch)
+    public IActionResult AtualizaFilmeParcial(int id, JsonPatchDocument<UpdateFilmeDTO> patch)
     {
         var filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
         if (filme == null) return NotFound();
-        var filmeParaAtualizar = _mapper.Map<UpdateFilmeDto>(filme);
+        var filmeParaAtualizar = _mapper.Map<UpdateFilmeDTO>(filme);
         patch.ApplyTo(filmeParaAtualizar, ModelState);
         if (!TryValidateModel(filmeParaAtualizar))
         {
@@ -75,4 +75,15 @@ public class FilmeController : ControllerBase
         _context.SaveChanges();
         return NoContent();
     }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeletaFilme(int id)
+    {
+        var filme = _context.Filmes.FirstOrDefault(p => p.Id == id);
+        if (filme == null) return NotFound();
+        _context.Remove(filme);
+        _context.SaveChanges();
+        return NoContent();
+    }
+
 }
