@@ -22,8 +22,15 @@ public class FilmeController : ControllerBase
         _mapper = mapper;
 
     }
+    /// <summary>
+    /// Adiciona um filme ao banco de dados
+    /// </summary>
+    /// <param name="filmeDTO">Objeto com os campos necessários para criação de um filme</param>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Caso inserção seja feita com sucesso</response>
 
     [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     public IActionResult AdicionarFilme([FromBody] CreateFilmeDTO filmeDTO)
     {
         // filme.Id = Id++;
@@ -37,10 +44,17 @@ public class FilmeController : ControllerBase
             new { id = filme.Id },
             filme);
     }
+    /// <summary>
+    /// Adiciona um filme ao banco de dados
+    /// </summary>
+    /// <param name="skip"></param>
+    /// <param name="take"></param>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Caso inserção seja feita com sucesso</response>
     [HttpGet]
-    public IEnumerable<Filme> RecuperaFilmes([FromQuery] int skip = 0, [FromQuery] int take = 30)
+    public IEnumerable<ReadFilmeDTO> RecuperaFilmes([FromQuery] int skip = 0, [FromQuery] int take = 30)
     {
-        return _context.Filmes.Skip(skip).Take(take);
+        return _mapper.Map<List<ReadFilmeDTO>>(_context.Filmes.Skip(skip).Take(take));
     }
     [HttpGet("{id}")]
     public IActionResult RecuperaFilmesPorId(int id)

@@ -46,3 +46,5 @@ C:\Projetos\AutoPlay\FilmesAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.d
 C:\Projetos\AutoPlay\FilmesAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Projetos\AutoPlay\FilmesAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Projetos\AutoPlay\FilmesAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Projetos\AutoPlay\FilmesAPI\bin\Debug\net6.0\FilmesAPI.xml
+C:\Projetos\AutoPlay\FilmesAPI\obj\Debug\net6.0\FilmesAPI.xml
