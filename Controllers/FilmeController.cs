@@ -45,7 +45,7 @@ public class FilmeController : ControllerBase
             filme);
     }
     /// <summary>
-    /// Adiciona um filme ao banco de dados
+    /// Recupera determinada quantidade de filmes do banco de dados
     /// </summary>
     /// <param name="skip"></param>
     /// <param name="take"></param>
@@ -56,6 +56,12 @@ public class FilmeController : ControllerBase
     {
         return _mapper.Map<List<ReadFilmeDTO>>(_context.Filmes.Skip(skip).Take(take));
     }
+    /// <summary>
+    /// Adiciona um filme ao banco de dados
+    /// </summary>
+    /// <param name="id">Objeto com os campos necessários para criação de um filme</param>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Caso inserção seja feita com sucesso</response>
     [HttpGet("{id}")]
     public IActionResult RecuperaFilmesPorId(int id)
     {
@@ -63,7 +69,14 @@ public class FilmeController : ControllerBase
         if (filme == null) return NotFound();
         return Ok(filme);
     }
-
+    /// <summary>
+    /// Adiciona um filme ao banco de dados
+    /// </summary>
+    /// <param name="id">Objeto com os campos necessários para criação de um filme</param>
+    /// 
+    /// <param name="filmeDTO">Objeto com os campos necessários para criação de um filme</param>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Caso inserção seja feita com sucesso</response>
     [HttpPut("{id}")]
     public IActionResult AtualizaFilme(int id, [FromBody] UpdateFilmeDTO filmeDTO)
     {
@@ -73,6 +86,14 @@ public class FilmeController : ControllerBase
         _context.SaveChanges();
         return NoContent();
     }
+    /// <summary>
+    /// Adiciona um filme ao banco de dados
+    /// </summary>
+    /// <param name="id">Objeto com os campos necessários para criação de um filme</param>
+    /// 
+    /// <param name="patch">Objeto com os campos necessários para criação de um filme</param>
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Caso inserção seja feita com sucesso</response>
 
     [HttpPatch("{id}")]
     public IActionResult AtualizaFilmeParcial(int id, JsonPatchDocument<UpdateFilmeDTO> patch)
@@ -89,7 +110,14 @@ public class FilmeController : ControllerBase
         _context.SaveChanges();
         return NoContent();
     }
+    /// <summary>
+    /// Adiciona um filme ao banco de dados
+    /// </summary>
+    /// <param name="id">Objeto com os campos necessários para criação de um filme</param>
+    /// 
 
+    /// <returns>IActionResult</returns>
+    /// <response code="201">Caso inserção seja feita com sucesso</response>s
     [HttpDelete("{id}")]
     public IActionResult DeletaFilme(int id)
     {

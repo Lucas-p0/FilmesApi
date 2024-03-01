@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C+YG/tTxFhic/YtqNXug3WCdb/kb3YEdJC2OrhtUcZm+Ge1RLedlbBM+KImx9eDIYfORrbjvztJ6OisZLOAZVg==",
+  "dgSpecHash": "UPttfVoSTIk+mi3ww9mXJyn8XZyWhyOUTVnMoetBRCF7y/BUmcRvYfFebIY5IsCNtnD6ZRs/LMsJoF9rAWU1lg==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\AutoPlay\\FilmesAPI\\FilmesAPI.csproj",
   "expectedPackageFiles": [
@@ -37,7 +37,11 @@
     "C:\\Users\\Lucas.pinheiro\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "C:\\Users\\Lucas.pinheiro\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Lucas.pinheiro\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\Lucas.pinheiro\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\Lucas.pinheiro\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Lucas.pinheiro\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Lucas.pinheiro\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Lucas.pinheiro\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\Lucas.pinheiro\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
   ],
   "logs": []
 }
